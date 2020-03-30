@@ -1,5 +1,3 @@
-https://github.com/showma0734/code_memo/wiki
-
 puts "問0:abcとs"
 a = gets.to_i
 b,c = gets.chomp.split.map(&:to_i)
@@ -25,4 +23,7 @@ puts "問2:3つの1or0"
 nums = gets.chomp.split("").map(&:to_i)
 puts nums.sum
 #num.inject(0){ |cnt,n| cnt += n }
+
+
+#https://github.com/showma0734/code_memo/wiki
 

@@ -1,6 +1,6 @@
 puts "問6:カードゲーム"
 n = gets.to_i
-as = gets.strip.split.map(&:to_i)
+as = gets.chomp.split.map(&:to_i)
 alice = 0
 bob = 0
 until as.empty? do
@@ -9,6 +9,15 @@ until as.empty? do
     as.delete(as.max) if bob += as.max
 end
 puts (alice - bob)
+
+=begin
+as.sort.reverse
+until as.empty? do
+    alice += as.shift
+    break if as.empty?
+    bob += as.shift
+end
+=end
 
 #---------------------------------------------------
 
@@ -31,5 +40,5 @@ a,b,c = -1, -1, -1
     end
 end
 
-print a,b,c
+puts "#{a} #{b} #{c}"
 
