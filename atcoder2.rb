@@ -6,7 +6,7 @@ def marbles(a,b,c)
         end
     end
     p d.sum
-    #d.inject(0){ |cnt,n| cnt += n }git
+    #d.inject(0){ |cnt,n| cnt += n }
 end
 
 puts marbles( 1, 0, 1) == 2
