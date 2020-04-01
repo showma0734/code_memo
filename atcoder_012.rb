@@ -27,3 +27,5 @@ puts nums.sum
 
 #https://github.com/showma0734/code_memo/wiki
 
+https://enigmatic-waters-92030.herokuapp.com/login
+

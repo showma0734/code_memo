@@ -1,34 +1,29 @@
-def input(num)
-    num = num.to_i
-    unless num >= 1 && num <= 200
-        return nil
-    end
-    num
-end
-
-def division(*input)
-    d = input
-    d.each do |x| 
-        x = x.to_i
-        unless x >= 1 && x <= 10**9 
-            return nil
+def confirm(*n)
+    ds = *n
+    ds.each do |d|
+        d = d.to_i
+        unless d >= 1 && d <= 10**9 
+            return 
         end
     end
-    sum = 0
-    while d.all?(&:even?) do
-        sum = sum.succ
-        d = d.map{ |n| n/2 }
-    end
-    sum
 end
 
+def division(*n)
+    ds = *n
+    if confirm(*n)
+        sum = 0
+        while ds.all?(&:even?) do
+            sum = sum.succ
+            ds = ds.map{ |d| d/2 }
+        end
+        sum
+    end
+end
+
+
+
+
 #テスト
-puts input(3) == 3
-puts input(0) == nil
-puts input(1) == 1
-puts input(201) == nil
-puts input(200) == 200
-puts input("a") == nil
 
 puts division(8,12,40) == 2
 puts division(5,6,8,10) == 0
