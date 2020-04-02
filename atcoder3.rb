@@ -1,30 +1,24 @@
-def confirm(*n)
-    ds = *n
-    ds.each do |d|
-        d = d.to_i
-        unless d >= 1 && d <= 10**9 
-            return 
-        end
-    end
+def valid?(*nums)
+    return false unless nums.all?{|obj| obj.is_a?(Integer)}
+    return false if nums.any?{|num| num < 1 || num > 10**9}
+    true
 end
 
-def division(*n)
-    ds = *n
-    if confirm(*n)
-        $sum = 0
-        #while ds.all?(&:even?) do
-        #    sum = sum.succ
-        #    ds = ds.map{ |d| d/2 }
-        #end
-        result(ds)
-        p $sum
-    end
+def division(*nums)
+    return nil unless valid?(*nums)
+    sum = 0
+    p result(nums,sum)
+    #while ds.all?(&:even?) do
+    #    sum = sum.succ
+    #    ds = ds.map{ |d| d/2 }
+    #end
 end
 
-def result(arr)
-    return if arr.any?{|a| a.odd?} #any?..全ての要素が偽ならfalse,真があればtrue
-    $sum += 1
-    result(arr.map{|a| a/ 2})
+def result(arr,cnt)
+    return cnt if arr.any?{|a| a.odd?} 
+    cnt += 1
+    s = arr.map{|a| a/ 2}
+    result(s,cnt)
 end
 
 
