@@ -1,18 +1,12 @@
-def confirm(*n)
-    mochi = n
-    mochi.each do |m|
-        m = m.to_i
-        unless m >= 1 && m <= 100
-            return            
-        end
-    end
+def valid?(*mochi)
+    return false unless mochi.all?{|obj| obj.is_a?(Integer)}
+    return false if mochi.any?{|num| num < 1 || num > 100}
+    true
 end
 
-def kagamimochi(*n)
-    mochi = n
-    if confirm(*n)
-        mochi.uniq.length
-    end
+def kagamimochi(*mochi)
+    return nil unless valid?(*mochi)
+    mochi.uniq.length
 end
 
 

@@ -1,25 +1,23 @@
-def confirm(n,y)
-    n = n.to_i
-    y = y.to_i
-    if n >= 1 && n <= 2000 && y >= 1000 && y <= 2*10**7 && y % 1000 == 0
-        n
-        y   
-    end
+def valid?(n,y)
+    return false unless [n,y].all?{|obj| obj.is_a?(Integer)}
+    return false if n < 1 || n > 2000
+    return false if y < 1000 || y > 2*10**7
+    return false if y % 1000 > 0
+    true
 end
 
 def otoshidama(n,y)
-    if confirm(n,y)
-        a,b,c = -1,-1,-1
-        (0..n).each do |x|
-            (0..n-x).each do |z|
-                v = n-x-z
-                if x*10000 + z*5000 + v*1000 == y
-                    a,b,c = x,z,v
-                end
+    return nil unless valid?(n,y)
+    a,b,c = -1,-1,-1
+    (0..n).each do |x|
+        (0..n-x).each do |z|
+            v = n-x-z
+            if x*10000 + z*5000 + v*1000 == y
+                a,b,c = x,z,v
             end
         end
-        "#{a} #{b} #{c}"
     end
+    "#{a} #{b} #{c}"
 end
 
 #テスト

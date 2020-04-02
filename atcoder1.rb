@@ -1,17 +1,13 @@
-def confirm(a,b)
-    a = a.to_i
-    b = b.to_i
-    if a >= 1 && a <= 10000 && b >= 1 && b <= 10000
-        a
-        b
-    end
+def valid?(a,b)
+    return false unless [a,b].all?{|obj| obj.is_a?(Integer)}
+    return false if a < 1 || a > 10000
+    return false if b < 1 || b > 10000
+    true
 end
 
 def product(a,b)
-    if confirm(a,b)
-        c = a * b
-        c.even? ? "Even" : "Odd"
-    end
+    return nil unless valid?(a,b)
+    (a*b).even? ? "Even" : "Odd"
 end
 
 
