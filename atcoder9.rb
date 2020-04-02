@@ -1,13 +1,13 @@
 def valid?(s)
-    return false unless s.is_a?(String)
-    return false if s.length < 1 || s.length > 10**5
-    true
+  return false unless s.is_a?(String)
+  return false if s.length < 1 || s.length > 10**5
+  true
 end
 
 def dreamerase(s)
-    return nil unless valid?(s)
-    s = s.gsub(/eraser/,"").gsub(/erase/,"").gsub(/dreamer/,"").gsub(/dream/,"")
-    s.length == 0 ? "YES" : "NO"
+  return nil unless valid?(s)
+  s = s.gsub(/eraser/,"").gsub(/erase/,"").gsub(/dreamer/,"").gsub(/dream/,"")
+  s.length == 0 ? "YES" : "NO"
 end
 
 #テスト
