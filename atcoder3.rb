@@ -11,15 +11,21 @@ end
 def division(*n)
     ds = *n
     if confirm(*n)
-        sum = 0
-        while ds.all?(&:even?) do
-            sum = sum.succ
-            ds = ds.map{ |d| d/2 }
-        end
-        sum
+        $sum = 0
+        #while ds.all?(&:even?) do
+        #    sum = sum.succ
+        #    ds = ds.map{ |d| d/2 }
+        #end
+        result(ds)
+        p $sum
     end
 end
 
+def result(arr)
+    return if arr.any?{|a| a.odd?} #any?..全ての要素が偽ならfalse,真があればtrue
+    $sum += 1
+    result(arr.map{|a| a/ 2})
+end
 
 
 
