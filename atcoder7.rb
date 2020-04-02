@@ -1,12 +1,12 @@
 def valid?(*mochi)
-    return false unless mochi.all?{|obj| obj.is_a?(Integer)}
-    return false if mochi.any?{|num| num < 1 || num > 100}
-    true
+  return false unless mochi.all?{|obj| obj.is_a?(Integer)}
+  return false if mochi.any?{|num| num < 1 || num > 100}
+  true
 end
 
 def kagamimochi(*mochi)
-    return nil unless valid?(*mochi)
-    mochi.uniq.length
+  return nil unless valid?(*mochi)
+  mochi.uniq.length
 end
 
 

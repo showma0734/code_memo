@@ -1,29 +1,30 @@
 def valid?(n,a,b)
-    return false unless [n,a,b].all?{|obj| obj.is_a?(Integer)}
-    return false if n > 10**4
-    return false if a < 1 || a > b
-    return false if b > 36
-    true
+  return false unless [n,a,b].all?{|obj| obj.is_a?(Integer)}
+  return false if n > 10**4
+  return false if a < 1 || a > b
+  return false if b > 36
+  true
 end
 
 
 def digitsum (n,a,b)
-    return nil unless valid?(n,a,b)
-    sum = 0
-    (1..n).each do |x|
-        nsum = 0
-        xs = x
-        digit = x.to_s.length
-        digit.times do #桁数で終了
-            nsum += x % 10 #nsumにxを足し、10の余りを取り、1の桁の数を取り出している
-            x /= 10 #nを10で割り、10の位を取り出す、2桁だと二週目で0になる
-        end
-        if nsum >= a && nsum <= b   #桁の和がa以上b以下の値の条件
-            sum += xs     #sum(初期値)に当てはまるxsを追加して足していく
-        end
+  return nil unless valid?(n,a,b)
+  sum = 0
+  (1..n).each do |x|
+    nsum = 0
+    xs = x
+    digit = x.to_s.length
+    digit.times do #桁数で終了
+      nsum += x % 10 #nsumにxを足し、10の余りを取り、1の桁の数を取り出している
+      x /= 10 #nを10で割り、10の位を取り出す、2桁だと二週目で0になる
     end
-    p sum         
+    if nsum >= a && nsum <= b   #桁の和がa以上b以下の値の条件
+      sum += xs     #sum(初期値)に当てはまるxsを追加して足していく
+    end
+  end
+  p sum         
 end
+
 
 
 

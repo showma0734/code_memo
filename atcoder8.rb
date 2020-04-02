@@ -1,23 +1,23 @@
 def valid?(n,y)
-    return false unless [n,y].all?{|obj| obj.is_a?(Integer)}
-    return false if n < 1 || n > 2000
-    return false if y < 1000 || y > 2*10**7
-    return false if y % 1000 > 0
-    true
+  return false unless [n,y].all?{|obj| obj.is_a?(Integer)}
+  return false if n < 1 || n > 2000
+  return false if y < 1000 || y > 2*10**7
+  return false if y % 1000 > 0
+  true
 end
 
 def otoshidama(n,y)
-    return nil unless valid?(n,y)
-    a,b,c = -1,-1,-1
-    (0..n).each do |ay|
-        (0..n-ay).each do |by|
-            cy = n-ay-by
-            if ay*10000 + by*5000 + cy*1000 == y
-                a,b,c = ay,by,cy
-            end
-        end
+  return nil unless valid?(n,y)
+  a,b,c = -1,-1,-1
+  (0..n).each do |ay|
+    (0..n-ay).each do |by|
+      cy = n-ay-by
+      if ay*10000 + by*5000 + cy*1000 == y
+        a,b,c = ay,by,cy
+      end
     end
-    "#{a} #{b} #{c}"
+  end
+  "#{a} #{b} #{c}"
 end
 
 

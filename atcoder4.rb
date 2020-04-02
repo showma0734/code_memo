@@ -1,27 +1,27 @@
 def valid?(a,b,c,x)
-    return false unless [a,b,c,x].all?{|obj| obj.is_a?(Integer)}
-    return false if a < 0 || a > 50
-    return false if b < 0 || b > 50
-    return false if c < 0 || c > 50
-    return false if x < 50 || x > 20000
-    return false if x % 50 > 0
-    return false if [a,b,c].sum < 1
-    true
+  return false unless [a,b,c,x].all?{|obj| obj.is_a?(Integer)}
+  return false if a < 0 || a > 50
+  return false if b < 0 || b > 50
+  return false if c < 0 || c > 50
+  return false if x < 50 || x > 20000
+  return false if x % 50 > 0
+  return false if [a,b,c].sum < 1
+  true
 end
     
 def coins(a,b,c,x)
-    return nil unless valid?(a,b,c,x) 
-    combination(a,b,c).select{|total| total == x}.size      
-endexit
+  return nil unless valid?(a,b,c,x) 
+  combination(a,b,c).select{|total| total == x}.size      
+end
 
 def combination(a,b,c)
-    (0..a).map do |ay|
-        (0..b).map do |by|
-            (0..c).map do |cy|
-                ay * 500 + by * 100 + cy * 50
-            end
-        end
-    end.flatten
+  (0..a).map do |ay|
+    (0..b).map do |by|
+      (0..c).map do |cy|
+        ay * 500 + by * 100 + cy * 50
+      end
+    end
+  end.flatten
 end
 
 #sum = 0

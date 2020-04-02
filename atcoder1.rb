@@ -1,13 +1,13 @@
 def valid?(a,b)
-    return false unless [a,b].all?{|obj| obj.is_a?(Integer)}
-    return false if a < 1 || a > 10000
-    return false if b < 1 || b > 10000
-    true
+  return false unless [a,b].all?{|obj| obj.is_a?(Integer)}
+  return false if a < 1 || a > 10000
+  return false if b < 1 || b > 10000
+  true
 end
 
 def product(a,b)
-    return nil unless valid?(a,b)
-    (a*b).even? ? "Even" : "Odd"
+  return nil unless valid?(a,b)
+  (a*b).even? ? "Even" : "Odd"
 end
 
 
