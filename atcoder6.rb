@@ -13,7 +13,7 @@ def cardgame(*cards)
         break if cards.empty?
         cards.delete(cards.max) if bob += cards.max
     end
-    p alice - bobgit
+    alice - bob
 end
 
 
