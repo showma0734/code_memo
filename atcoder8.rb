@@ -9,16 +9,20 @@ end
 def otoshidama(n,y)
     return nil unless valid?(n,y)
     a,b,c = -1,-1,-1
-    (0..n).each do |x|
-        (0..n-x).each do |z|
-            v = n-x-z
-            if x*10000 + z*5000 + v*1000 == y
-                a,b,c = x,z,v
+    (0..n).each do |ay|
+        (0..n-ay).each do |by|
+            cy = n-ay-by
+            if ay*10000 + by*5000 + cy*1000 == y
+                a,b,c = ay,by,cy
             end
         end
     end
     "#{a} #{b} #{c}"
 end
+
+
+
+
 
 #テスト
 
