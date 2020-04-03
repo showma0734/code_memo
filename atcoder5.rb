@@ -6,29 +6,21 @@ def valid?(n,a,b)
   true
 end
 
-
 def digitsum (n,a,b)
   return nil unless valid?(n,a,b)
-  sum = 0
-  (1..n).each do |x|
-    nsum = 0
-    xs = x
-    digit = x.to_s.length
-    digit.times do #桁数で終了
-      nsum += x % 10 #nsumにxを足し、10の余りを取り、1の桁の数を取り出している
-      x /= 10 #nを10で割り、10の位を取り出す、2桁だと二週目で0になる
-    end
-    if nsum >= a && nsum <= b   #桁の和がa以上b以下の値の条件
-      sum += xs     #sum(初期値)に当てはまるxsを追加して足していく
-    end
-  end
-  p sum         
+  calculation(n,a,b)
 end
 
+def calculation(n,a,b)
+  result = 0
+  (0..n).each do |x|
+    digit = x.to_s.split("").map(&:to_i).sum
+    result += x if a <= digit && digit <= b
+  end
+  p result
+end
 
-
-
-
+#test
 
 puts digitsum(20,2,5) == 84
 puts digitsum(100,4,16) == 4554
