@@ -26,7 +26,6 @@ def calculation(n,t2,x2,y2)
       return 
     end 
   end
-  true
 end
 
 
