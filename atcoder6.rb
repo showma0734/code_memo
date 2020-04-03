@@ -6,16 +6,20 @@ end
 
 def cardgame(*cards)
   return nil unless valid?(*cards)
-  alice = 0
-  bob = 0
+  alice,bob = 0,0
+  cards = cards.sort.reverse
+  
   until cards.empty? do
-    cards.delete(cards.max) if alice += cards.max
+    alice += cards.shift
     break if cards.empty?
-    cards.delete(cards.max) if bob += cards.max
+    bob += cards.shift
   end
   alice - bob
 end
 
+
+# cards.delete(cards.max) if alice += cards.max
+# cards.delete(cards.max) if bob += cards.max
 
 
 puts cardgame(3,1) == 2
