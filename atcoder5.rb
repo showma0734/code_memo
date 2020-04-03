@@ -1,6 +1,6 @@
 def valid?(n,a,b)
   return false unless [n,a,b].all?{|obj| obj.is_a?(Integer)}
-  return false if n > 10**4
+  return false if n < 1 || n > 10**4
   return false if a < 1 || a > b
   return false if b > 36
   true
