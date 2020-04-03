@@ -6,9 +6,20 @@ end
 
 def dreamerase(s)
   return nil unless valid?(s)
-  s = s.gsub(/eraser/,"").gsub(/erase/,"").gsub(/dreamer/,"").gsub(/dream/,"")
-  s.length == 0 ? "YES" : "NO"
+  return nil unless use_words(s)
+  use_words(s).length == 0 ? "YES" : "NO"
 end
+
+def order_find(s)
+  s = s.gsub(/eraser/,"").gsub(/erase/,"").gsub(/dreamer/,"").gsub(/dream/,"")
+end
+
+def use_words(s)
+  words = ["eraser", "erase", "dreamer", "dream"]
+  words.each {|word| s.gsub!( word, "")}
+  s
+end
+
 
 #テスト
 
