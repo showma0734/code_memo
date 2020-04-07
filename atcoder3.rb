@@ -7,18 +7,18 @@ end
 def division(*nums)
   return nil unless valid?(*nums)
   sum = 0
-  p result(nums,sum)
+  division_sum(nums,sum)
   #while ds.all?(&:even?) do
   #  sum = sum.succ
   #  ds = ds.map{ |d| d/2 }
   #end
 end
 
-def result(arr,cnt)
+def division_sum(arr,cnt)
   return cnt if arr.any?{|a| a.odd?} 
   cnt += 1
   s = arr.map{|a| a/ 2}
-  result(s,cnt)
+  division_sum(s,cnt)
 end
 
 
