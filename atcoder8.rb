@@ -45,6 +45,7 @@ end
 #test
 
 puts otoshidama(9, 45000) == [[0, 9, 0], [1, 7, 0], [2, 5, 0], [3, 3, 0], [4, 0, 5], [4, 1, 0]]
+puts otoshidama(10, 10000) == [[0, 0, 10], [0, 1, 5], [0, 2, 0], [1, 0, 0]]
 puts otoshidama(20, 196000) == "-1 -1 -1"
 puts otoshidama(0, 5000) == nil
 puts otoshidama(1, 2*10**7) == "-1 -1 -1"
