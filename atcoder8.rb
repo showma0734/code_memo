@@ -8,14 +8,14 @@ end
 
 def otoshidama(n,y)
   return nil unless valid?(n,y)
-  return p "-1 -1 -1" if combination(n, y).flatten.all?{|num| num == nil}
+  return "-1 -1 -1" if combination(n, y).flatten.all?{|num| num == nil}
   nums = combination(n, y).flatten.select{|num| num != nil}
-  arr= []
+  arr = Array.new
   until nums.empty? 
     three = nums.shift(3)
     arr << three
   end
-  p arr
+  arr
     
   #a,b,c = -1,-1,-1
   #(0..n).each do |ay|
