@@ -11,8 +11,8 @@ def cardgame(n,*cards)
   return nil unless valid?(n,*cards)
   alice,bob = 0,0
   cards = cards.sort.reverse
-  alice = cards.select.with_index{|num, idx| idx % 2 == 0}.sum
-  bob = cards.select.with_index{|num, idx| idx % 2 == 1}.sum
+  alice = cards.select.with_index{|num, idx| idx.even? }.sum
+  bob = cards.select.with_index{|num, idx| idx.odd? }.sum
   
   #until cards.empty? do
   #  alice += cards.shift unless cards.size == 0
@@ -20,9 +20,6 @@ def cardgame(n,*cards)
   #end
   p alice - bob
 end
-
-
-
 
 
 # cards.delete(cards.max) if alice += cards.max
