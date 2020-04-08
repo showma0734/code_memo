@@ -7,7 +7,7 @@ end
 def dreamerase(s)
   return nil unless valid?(s)
   return nil unless use_words(s)
-  use_words(s).length == 0 ? "YES" : "NO"
+  p use_words(s).length == 0 ? "YES" : "NO"
 end
 
 def order_find(s)
@@ -16,12 +16,11 @@ end
 
 def use_words(s)
   words = ["eraser", "erase", "dreamer", "dream"]
-  words.each {|word| s.gsub!( word, "")}
-  s
+  return s if words.each {|word| s.gsub!( word, "")}
 end
 
 
-#テスト
+#test
 
 puts dreamerase("dreamerase") == "YES"
 puts dreamerase("dreamereraser") == "YES"
@@ -34,7 +33,7 @@ puts dreamerase("a") == "NO"
 puts dreamerase("a"*11**5) == nil
 puts dreamerase("a"*10**5) == "NO"
 
-#全てtrue
+#all true
 
  
 
