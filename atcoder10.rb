@@ -17,9 +17,9 @@ def traveling(n, t2, x2, y2)
   if t.even? == (x + y).even? && (x + y) <= t
     t1, x1, y1 = t2, x2, y2
   else
-    return p "NO"
+    return "NO"
   end  
-  p "YES"
+  "YES"
 end
 
 
