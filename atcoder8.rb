@@ -8,7 +8,7 @@ end
 
 def otoshidama(n,y)
   return nil unless valid?(n,y)
-  return "-1 -1 -1" if combination(n, y).flatten.all?{|num| num == nil}
+  return [-1 -1 -1] if combination(n, y).flatten.all?{|num| num == nil}
   nums = combination(n, y).flatten.select{|num| num != nil}
   arr = Array.new
   until nums.empty? 
@@ -46,11 +46,11 @@ end
 
 puts otoshidama(9, 45000) == [[0, 9, 0], [1, 7, 0], [2, 5, 0], [3, 3, 0], [4, 0, 5], [4, 1, 0]]
 puts otoshidama(10, 10000) == [[0, 0, 10], [0, 1, 5], [0, 2, 0], [1, 0, 0]]
-puts otoshidama(20, 196000) == "-1 -1 -1"
+puts otoshidama(20, 196000) == [-1 -1 -1]
 puts otoshidama(0, 5000) == nil
-puts otoshidama(1, 2*10**7) == "-1 -1 -1"
+puts otoshidama(1, 2*10**7) == [-1 -1 -1]
 puts otoshidama(1, 2*11**7) == nil
-#puts otoshidama(2000, 1000) == "-1 -1 -1"
+#puts otoshidama(2000, 1000) == [-1 -1 -1]
 puts otoshidama(2001, 10000000) == nil
 puts otoshidama(2, 900) == nil
 puts otoshidama(1, 1000) == [[0, 0, 1]]
